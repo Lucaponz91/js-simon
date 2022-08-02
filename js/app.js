@@ -2,6 +2,7 @@
 let arrayNumeriRandom = []
 let numeriUser = []
 let numeriAzzeccati = []
+let mePushthis
 
 
 arrayNumeriRandom = generaNumeri(5)
