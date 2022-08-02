@@ -2,7 +2,7 @@
 let arrayNumeriRandom = []
 let numeriUser = []
 let numeriAzzeccati = []
-let mePushthis
+console.log(numeriAzzeccati)
 
 
 arrayNumeriRandom = generaNumeri(5)
@@ -16,20 +16,28 @@ alert(arrayOrdinato)
 
 
 setTimeout(() => {
-    let numeriUser = prompt ('Inserisci i numeri precedentementi visualizzati, separati da una virgola, senza spazi')
+    for (let i =0; i < arrayOrdinato.length; i++){
+        let numeriPrompt = parseInt(prompt('Inserisci il ' + [i+1] +' numero'))
+        console.log(numeriPrompt)
+        numeriUser.push(numeriPrompt)
+        
+    }
     console.log(numeriUser)
+
     // CICLO PER MOSTRARE I NUMERI GIUSTI
     for( let i = 0; i < arrayOrdinato.length; i++){
         if(arrayOrdinato.includes(numeriUser[i])){
           numeriAzzeccati.push(numeriUser[i])
+          console.log(numeriUser, numeriAzzeccati)
+
           
         }   
       }
 
-    if (arrayOrdinato == numeriUser) {
+    if (arrayOrdinato === numeriUser) {
         alert('Hai vinto!')
     } else {
-        alert("Hai perso :( Hai indovinato i seguenti numeri: " + numeriAzzeccati)
+        alert("Hai perso  Hai indovinato i seguenti numeri: " + numeriAzzeccati)
         console.log(numeriAzzeccati)
     }
 }, 3000);
