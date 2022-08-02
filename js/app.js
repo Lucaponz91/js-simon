@@ -1,11 +1,14 @@
 // Visualizzare in pagina 5 numeri casuali. (con un alert)
 let arrayNumeriRandom = []
+let numeriUser = []
+let numeriAzzeccati = []
+
+
 arrayNumeriRandom = generaNumeri(5)
 console.log(arrayNumeriRandom)
 const arrayOrdinato = arrayNumeriRandom.sort((a,b)=>a-b)
 console.log(arrayOrdinato)
 alert(arrayOrdinato)
-let numeriUser
 
 // Dopo che l’utente avrà chiuso l’alert (quindi i numeri non saranno pìu visibili) parte un timer di 30 secondi.
 // Alla fine dei 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
@@ -14,22 +17,31 @@ let numeriUser
 setTimeout(() => {
     let numeriUser = prompt ('Inserisci i numeri precedentementi visualizzati, separati da una virgola, senza spazi')
     console.log(numeriUser)
+    // CICLO PER MOSTRARE I NUMERI GIUSTI
+    for( let i = 0; i < arrayOrdinato.length; i++){
+        if(arrayOrdinato.includes(numeriUser[i])){
+          numeriAzzeccati.push(numeriUser[i])
+          
+        }   
+      }
+
     if (arrayOrdinato == numeriUser) {
         alert('Hai vinto!')
     } else {
-        alert('Hai perso :(')
+        alert("Hai perso :( Hai indovinato i seguenti numeri: " + numeriAzzeccati)
+        console.log(numeriAzzeccati)
     }
 }, 3000);
 
 
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
-// ###### FUNZIONE CHE INSERISCE 6 NUMERI NON DOPPIONI
+// ###### FUNZIONE CHE INSERISCE 5 NUMERI NON DOPPIONI
 function generaNumeri(max){
-    // creo array (da 16 in questo caso)
+    // creo array
     const numeri = []
     // ciclo per creare i numeri
-    while (numeri.length < 5) {
+    while (numeri.length < max) {
         // GENERO UN NUMERO CASUALE DA 1 A 100
         let n = numeroRandom (1, 100)
         // 
@@ -37,7 +49,6 @@ function generaNumeri(max){
             numeri.push(n)
         }
     }
-    // console.log(numeri)
     return numeri
 }
 
