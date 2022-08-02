@@ -33,13 +33,22 @@ setTimeout(() => {
           
         }   
       }
+    
+    //   for (let i = 0; i < arrayOrdinato.length; i++) {
+        if ( numeriAzzeccati.length != 5) {
+            alert('Hai perso :( Hai indovinato i seguenti numeri: ' + numeriAzzeccati)
+        } else {
+            alert('Hai vinto')
 
-    if (arrayOrdinato === numeriUser) {
-        alert('Hai vinto!')
-    } else {
-        alert("Hai perso  Hai indovinato i seguenti numeri: " + numeriAzzeccati)
-        console.log(numeriAzzeccati)
-    }
+        }
+        
+    //   }
+    // if (arrayOrdinato === numeriUser) {
+    //     alert('Hai vinto!')
+    // } else {
+    //     alert("Hai perso  Hai indovinato i seguenti numeri: " + numeriAzzeccati)
+    //     console.log(numeriAzzeccati)
+    // }
 }, 3000);
 
 
