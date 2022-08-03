@@ -12,7 +12,7 @@ console.log(arrayOrdinato)
 alert(arrayOrdinato)
 
 // Dopo che l’utente avrà chiuso l’alert (quindi i numeri non saranno pìu visibili) parte un timer di 30 secondi.
-// Alla fine dei 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+// Allafine dei 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 
 
 setTimeout(() => {
