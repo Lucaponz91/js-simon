@@ -26,7 +26,7 @@ setTimeout(() => {
 
     // CICLO PER MOSTRARE I NUMERI GIUSTI
     for( let i = 0; i < arrayOrdinato.length; i++){
-        if(arrayOrdinato.includes(numeriUser[i])){
+        if(arrayOrdinato.includes(numeriUser[i]) && !numeriAzzeccati.includes(numeriUser[i])){
           numeriAzzeccati.push(numeriUser[i])
           console.log(numeriUser, numeriAzzeccati)
 
